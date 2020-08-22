@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import Launch from './components/Launch'
 import LaunchDetails from './components/LaunchDetails'
 
 function App() {
+  const [id, setId] = useState(13)
+  const changeFlight = useCallback(newId => {
+    setId(newId)
+  }, [])
   return (
     <div className="App">
-      <Launch />
-      <LaunchDetails/>
+      <Launch changeFlight={changeFlight} />
+      <LaunchDetails id={id} />
     </div>
   )
 }

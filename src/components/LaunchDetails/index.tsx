@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useFlightInfoQuery } from '../../generated/graphql'
 import LaunchDetails from '../LaunchDetails/LaunchDetails'
 
-const LaunchQueryContainer = () => {
-    const {data, error, loading} = useFlightInfoQuery({variables: {id: "13"}})
+interface Props {
+    id: number
+}
+
+const LaunchQueryContainer = ({id} : Props) => {
+    const {data, error, loading, refetch} = useFlightInfoQuery({variables: {id: String(id)}})
+
+    useEffect(() =>{
+        refetch()
+    }, [id])
+
     if(loading){
      return <div>Data is loading</div>   
     }
