@@ -9,19 +9,26 @@
 
 .status {
   margin-top: 40px;
+  font-size: large;
+  font-weight: 700;
 }
 
 .title {
   margin-top: 0;
   margin-bottom: 4px;
+  color: skyblue;
 }
 
 .success {
   color: #2cb84b;
+  font-size: large;
+  font-weight: 700;
 }
 
 .failed {
   color: #ff695e;
+  font-size: large;
+  font-weight: 700;
 }
 
 .image-list {
@@ -34,4 +41,22 @@
 
 .image {
   width: 100%;
+  transition: width 500ms;
+}
+
+.image:hover {
+    width: 120%;
+}
+
+
+.description {
+    font-weight: 600;
+}
+
+.centerClass {
+    font-size: xx-large;
+    text-align: center;
+    align-self: center;
+    height: 100%;
+    width: 100%;
 }

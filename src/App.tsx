@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import Launch from './components/Launch'
 import LaunchDetails from './components/LaunchDetails'
+import './App.css'
 
 function App() {
   const [id, setId] = useState(13)

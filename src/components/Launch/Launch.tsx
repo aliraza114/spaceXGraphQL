@@ -20,7 +20,7 @@ const Launch: React.FC<Props> = ({ data, changeFlight }) => {
                         <li key={i} className="LaunchesItem"
                             onClick={() => changeFlight(launch.flight_number!)}
                         >
-                            {launch.mission_name} - {launch.launch_year} ({JSON.stringify(launch.launch_success)})
+                            {launch.mission_name} - {launch.launch_year} <span className={(launch.launch_success ? "badge-primary " : "badge-danger")}>Launch : {launch.launch_success ? 'Successful' :  'Failed' }</span>
                         </li>
                     )
                 )}

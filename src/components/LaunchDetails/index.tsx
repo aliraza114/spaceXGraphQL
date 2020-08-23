@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import { useFlightInfoQuery } from '../../generated/graphql'
 import LaunchDetails from '../LaunchDetails/LaunchDetails'
-
+import './styles.css'
 interface Props {
     id: number
 }
@@ -14,13 +14,13 @@ const LaunchQueryContainer = ({id} : Props) => {
     }, [id])
 
     if(loading){
-     return <div>Data is loading</div>   
+     return <div className="centerClass">Data is loading</div>   
     }
     if(error){
-        return <div>There was an Error</div>
+        return <div className="centerClass">There was an Error</div>
     }
     if(!data){
-        return <div>Please Select Mission</div>
+        return <div className="centerClass">Please Select Mission</div>
     }
 
     return <LaunchDetails data={data} />
